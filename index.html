@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- ==== SEO & BRANDING ==== -->
+    <title>IronByte Digital | Soluções Web & IA de Alta Performance</title>
+    <meta name="description" content="Na Ironbyte Digital desenvolvemos sites, sistemas e soluções de IA com solidez e precisão. Liderada por João Marcos, especialista em tecnologia escalável.">
+    <meta name="keywords" content="IronByte Digital, Desenvolvimento Web, Agência de IA, Criação de Sites, Sistemas Web, Automação, João Marcos, Tech, Soluções Corporativas">
+    <meta name="author" content="IronByte Digital">
+    <meta name="robots" content="index, follow">
+    
+    <!-- ==== URL CANÔNICA ==== -->
+    <link rel="canonical" href="https://ironbyte.digital/">
+
+    <!-- ==== OPEN GRAPH ==== -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://ironbyte.digital/">
+    <meta property="og:title" content="IronByte Digital - Tecnologia Forte e Escalável">
+    <meta property="og:description" content="Desenvolvemos sites, sistemas e IA com a precisão que empresas sérias exigem.">
+    <meta property="og:image" content="https://i.postimg.cc/G2m26ShG/FOTO-PERFIL.jpg">
+    <meta property="og:site_name" content="IronByte Digital">
+
+    <!-- ==== SCHEMA MARKUP (Organization & Person) ==== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "IronByte Digital",
+      "founder": {
+        "@type": "Person",
+        "name": "João Marcos",
+        "jobTitle": "Head & Especialista em IA"
+      },
+      "description": "Na Ironbyte Digital desenvolvemos sites, sistemas, aplicativos e soluções de IA com a solidez e precisão que empresas sérias exigem.",
+      "url": "https://ironbyte.digital",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-19-98178-8921",
+        "contactType": "sales"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilização da barra de rolagem */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+        
+        .tech-tag {
+            background-color: rgba(79, 70, 229, 0.1);
+            color: #818cf8;
+            font-weight: 600;
+            padding: 0.35rem 1rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            transition: all 0.3s ease;
+        }
+        .tech-tag:hover {
+            background-color: rgba(79, 70, 229, 0.25);
+            border-color: #6366f1;
+            transform: translateY(-2px);
+            cursor: default;
+        }
+        
+        /* Animações e Efeitos */
+        .btn-glow {
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .btn-glow::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        /* Fundo Grid Animado */
+        .hero-bg {
+            background-color: #0f172a;
+            background-image: 
+                linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Gradiente de Texto Animado */
+        .gradient-text {
+            background: linear-gradient(to right, #818cf8, #c084fc, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: gradientMove 5s linear infinite;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        /* Animação de Entrada */
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-200 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- ==== NAV (Simples e Direta) ==== -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-white tracking-tighter cursor-pointer hover:text-indigo-400 transition-colors">
+                IRON<span class="text-indigo-500">BYTE</span> DIGITAL
+            </div>
+            <a href="https://wa.me/5519981788921?text=Olá,%20vi%20o%20site%20e%20quero%20escalar%20meu%20negócio." target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold py-2 px-4 rounded transition-all shadow-lg shadow-indigo-500/20 hover:scale-105">
+                Consultoria Gratuita
+            </a>
+        </div>
+    </nav>
+
+    <!-- ==== NOVA HERO SECTION (WOW FACTOR) ==== -->
+    <header class="hero-bg relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <!-- Elementos Flutuantes (Decoração) -->
+        <div class="absolute top-20 right-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <!-- Badge de Autoridade -->
+            <div class="fade-in-up inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 rounded-full px-4 py-1.5 mb-8 backdrop-blur-sm hover:border-indigo-500/50 transition-colors">
+                <span class="relative flex h-2.5 w-2.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-500"></span>
+                </span>
+                <span class="text-indigo-200 text-xs md:text-sm font-semibold tracking-wide uppercase">Tecnologia de Elite para Negócios Reais</span>
+            </div>
+
+            <!-- Headline Matadora -->
+            <h1 class="fade-in-up delay-100 text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-6">
+                NÃO CRIE APENAS UM SITE.<br>
+                <span class="gradient-text">CONSTRUA UM IMPÉRIO.</span>
+            </h1>
+
+            <!-- Subheadline Persuasiva -->
+            <p class="fade-in-up delay-200 text-lg md:text-2xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                Na <strong class="text-white">IronByte Digital</strong>, unimos Design de Alta Conversão, Inteligência Artificial e Engenharia de Software para transformar visitantes em <strong class="text-indigo-400">clientes fiéis</strong>. Pare de competir e comece a dominar o seu mercado.
+            </p>
+
+            <!-- CTA Principal & Secundário -->
+            <div class="fade-in-up delay-300 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://wa.me/5519981788921?text=Quero%20transformar%20meu%20negócio%20com%20a%20IronByte" target="_blank" class="btn-glow w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white text-lg font-bold py-4 px-10 rounded-xl transition-transform transform hover:scale-105 shadow-2xl shadow-indigo-600/40 flex items-center justify-center gap-3 border border-indigo-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    QUERO ESCALAR MEU NEGÓCIO
+                </a>
+                <a href="#projetos" class="w-full sm:w-auto bg-slate-800/50 hover:bg-slate-800 text-white text-lg font-semibold py-4 px-10 rounded-xl transition-all border border-slate-700 hover:border-slate-500 backdrop-blur-sm flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                    Ver Projetos Reais
+                </a>
+            </div>
+
+            <!-- Social Proof Rápida -->
+            <div class="fade-in-up delay-300 mt-12 pt-8 border-t border-slate-800/50 flex flex-col md:flex-row justify-center items-center gap-4 text-slate-500 text-sm">
+                <span>Tecnologias utilizadas por gigantes:</span>
+                <div class="flex gap-4 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" class="h-6 w-auto" alt="React">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" class="h-6 w-auto" alt="Python">
+                    <img src="https://firebase.google.com/static/images/brand-guidelines/logo-logomark.png" class="h-6 w-auto" alt="Firebase">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png" class="h-6 w-auto" alt="AWS">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==== TECNOLOGIAS (Stack da Agência) ==== -->
+        <section class="bg-slate-900 border-b border-slate-800 py-12">
+            <div class="container mx-auto max-w-5xl px-6">
+                <h3 class="text-sm font-bold text-center text-slate-500 uppercase tracking-widest mb-8">Nossa Caixa de Ferramentas</h3>
+                <div class="flex flex-wrap justify-center gap-3 opacity-90">
+                    <span class="tech-tag">HTML5 & Semântica</span>
+                    <span class="tech-tag">CSS3 & Tailwind</span>
+                    <span class="tech-tag">JavaScript (ES6+)</span>
+                    <span class="tech-tag">Python & Automação</span>
+                    <span class="tech-tag">Bubble.io</span>
+                    <span class="tech-tag">Flutter Flow</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">Inteligência Artificial Generativa</span>
+                    <span class="tech-tag">Agentes de IA (LLMs)</span>
+                    <span class="tech-tag">Análise de Dados</span>
+                    <span class="tech-tag">Google Cloud Platform</span>
+                    <span class="tech-tag">AWS (Amazon Cloud)</span>
+                    <span class="tech-tag">Microsoft 365 Enterprise</span>
+                    <span class="tech-tag">Power Apps & Automate</span>
+                    <span class="tech-tag">Excel VBA</span>
+                    <span class="tech-tag">WordPress & CMS</span>
+                    <span class="tech-tag">Framer</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== SOLUÇÕES EMPRESARIAIS ==== -->
+        <section id="solucoes" class="py-24 container mx-auto max-w-6xl px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">O Que a IronByte Entrega</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Soluções digitais completas, do código à estratégia, focadas em ROI e escalabilidade.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card de Serviço Padrão IronByte -->
+                <div class="group bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-2">Sites Institucionais</h3>
+                    <p class="text-slate-400 text-sm">Presença digital sólida para marcas que querem transmitir autoridade.</p>
+                </div>
+
+                <div class="group bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-2">Páginas de Alta Conversão</h3>
+                    <p class="text-slate-400 text-sm">Landing pages otimizadas para transformar visitantes em clientes pagantes.</p>
+                </div>
+
+                <div class="group bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-2">E-commerce Escalável</h3>
+                    <p class="text-slate-400 text-sm">Lojas virtuais robustas preparadas para alto volume de vendas.</p>
+                </div>
+
+                <div class="group bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-2">Agentes de IA</h3>
+                    <p class="text-slate-400 text-sm">Chatbots inteligentes que atendem e vendem 24/7 para sua empresa.</p>
+                </div>
+
+                <div class="group bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all border border-slate-700">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-2">Automação de Processos</h3>
+                    <p class="text-slate-400 text-sm">Sistemas que eliminam trabalho manual e reduzem custos operacionais.</p>
+                </div>
+
+                <div class="group bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-indigo-500 hover:bg-slate-800/80 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-indigo-400 mb-6 group-hover:bg-indigo-600 group-hover:text-white transition-all border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-xl text-white mb-2">Integrações de API</h3>
+                    <p class="text-slate-400 text-sm">Conectamos seus softwares favoritos para trabalharem em harmonia.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== COPY AGRESSIVA (Google SEO) ==== -->
+        <section class="my-24 relative rounded-2xl bg-gradient-to-r from-indigo-900 to-slate-900 px-6 py-20 shadow-2xl border-y border-indigo-500/30 container mx-auto max-w-6xl overflow-hidden">
+            <!-- Fundo dinâmico -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600 rounded-full mix-blend-overlay filter blur-3xl opacity-10 animate-pulse"></div>
+            
+            <div class="relative z-10 text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-400/20 rounded-full px-4 py-1 mb-8">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-indigo-300 text-sm font-bold uppercase tracking-wide">Estratégia IronByte de SEO</span>
+                </div>
+                
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                    Sua Empresa Está <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Invisível no Google?</span>
+                </h2>
+                
+                <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed">
+                    Não entregamos apenas código; construímos <strong>ativos digitais</strong>. Na IronByte, cada site é arquitetado com uma estrutura de SEO de elite. Colocamos sua marca na vitrine mais valiosa do mundo. Pare de perder contratos para concorrentes menores que aparecem antes de você.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="https://wa.me/5519981788921?text=Quero%20colocar%20minha%20empresa%20no%20topo%20do%20Google" target="_blank" class="w-full sm:w-auto bg-white text-indigo-900 font-bold py-4 px-10 rounded-lg hover:bg-indigo-50 transition-all duration-300 shadow-xl flex items-center justify-center gap-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        Dominar o Google Agora
+                    </a>
+                </div>
+                <p class="mt-6 text-xs text-indigo-300/50 uppercase tracking-widest">
+                    Exclusivo para empresas que buscam crescimento
+                </p>
+            </div>
+        </section>
+
+        <!-- ==== PROJETOS (Portfólio) ==== -->
+        <section id="projetos" class="py-12 container mx-auto max-w-6xl px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Portfólio Selecionado</h2>
+                <p class="text-slate-400">Projetos reais entregues com a qualidade IronByte.</p>
+            </div>
+            
+            <div id="projects-container" class="space-y-20">
+                <!-- Conteúdo injetado via JavaScript -->
+            </div>
+        </section>
+
+        <!-- ==== SOBRE A IRONBYTE (Antigo Hero, agora com assinatura de autoridade) ==== -->
+        <section class="container mx-auto max-w-6xl px-6 py-24 border-t border-slate-800">
+            <div class="bg-slate-800/50 rounded-3xl p-8 md:p-12 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16 border border-slate-700">
+                <!-- Texto de Vendas -->
+                <div class="flex-1 text-center md:text-left">
+                    <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-indigo-300 uppercase bg-indigo-900/30 rounded-full border border-indigo-500/30">
+                        Quem está no comando
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-4">
+                        João Marcos <br>
+                        <span class="text-indigo-500 text-2xl md:text-3xl block mt-2 font-bold">Head da IronByte Digital</span>
+                    </h2>
+                    
+                    <p class="mt-6 text-slate-300 text-lg leading-relaxed max-w-2xl border-l-4 border-indigo-500 pl-4">
+                        "Na <strong>IronByte Digital</strong> desenvolvemos sites, sistemas, aplicativos e soluções de IA com a solidez e precisão que empresas sérias exigem. Tecnologia forte, escalável e feita para durar. Ao contratar a IronByte, você não contrata um freelancer, você contrata um parceiro de crescimento."
+                    </p>
+
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                        <a href="https://wa.me/5519981788921?text=Quero%20um%20orçamento%20para%20um%20projeto%20sólido." target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 duration-300 shadow-xl shadow-indigo-500/25 flex items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Falar com o João
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Imagem do Expert -->
+                <div class="flex-shrink-0 relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <img src="https://i.postimg.cc/G2m26ShG/FOTO-PERFIL.jpg" alt="João Marcos - Head da IronByte Digital" class="relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-slate-900 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+            </div>
+        </section>
+
+        <!-- ==== CONTATO FINAL ==== -->
+        <section id="contato" class="py-24 bg-slate-900 border-t border-slate-800">
+            <div class="container mx-auto max-w-4xl px-6 text-center">
+                <h2 class="text-3xl font-bold text-white mb-6">Pronto para Elevar o Nível do Seu Negócio?</h2>
+                <p class="text-slate-400 mb-10 text-lg">
+                    A tecnologia certa separa as empresas que crescem das que estagnam. <br>Vamos conversar sobre o futuro da sua empresa hoje.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                     <a href="https://wa.me/5519981788921?text=Olá,%20gostaria%20de%20agendar%20uma%20reunião." target="_blank" class="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg transition-all hover:-translate-y-1 shadow-lg shadow-green-900/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Chamar no WhatsApp
+                    </a>
+                    <a href="mailto:joaomarcossouza@proton.me" class="flex items-center justify-center gap-3 bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-6 rounded-lg transition-all hover:-translate-y-1 border border-slate-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        Solicitar via E-mail
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==== FOOTER ==== -->
+    <footer class="bg-slate-950 py-10 border-t border-slate-900">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="block text-xl font-bold text-white tracking-tighter">IRON<span class="text-indigo-500">BYTE</span> DIGITAL</span>
+                <span class="text-slate-600 text-sm mt-1 block">Tecnologia forte, feita para durar.</span>
+            </div>
+            <p class="text-slate-600 text-sm">
+                &copy; 2024 IronByte Digital. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==== MODAL DE PRÉ-VISUALIZAÇÃO ==== -->
+    <div id="previewModal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-sm flex justify-center items-center p-4 z-50 hidden" role="dialog" aria-modal="true">
+        <div class="bg-slate-900 rounded-xl w-full max-w-6xl h-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-700 ring-1 ring-white/5">
+            <div class="flex justify-between items-center p-4 border-b border-slate-800 bg-slate-900 rounded-t-xl">
+                <h3 id="modalTitle" class="text-lg font-semibold text-white">Pré-visualização</h3>
+                <button id="closeModal" class="text-slate-400 hover:text-white transition-colors p-2 hover:bg-slate-800 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="flex-grow relative bg-slate-950">
+                <div class="absolute inset-0 flex items-center justify-center -z-10">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-500"></div>
+                </div>
+                <iframe id="previewFrame" class="w-full h-full border-0 rounded-b-xl" src="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCategories = [
+                {
+                    name: "Websites Corporativos & Landing Pages",
+                    items: [
+                        {
+                            title: 'Studio Moretti',
+                            description: 'Site institucional elegante, destacando a identidade visual e portfólio exclusivo.',
+                            link: 'https://studio-moretti.vercel.app/'
+                        },
+                        {
+                            title: 'Serena Mente',
+                            description: 'Ambiente digital acolhedor para psicologia e bem-estar mental, focado em conversão de pacientes.',
+                            link: 'https://serena-mente.vercel.app/'
+                        },
+                        {
+                            title: 'Odonto Prime',
+                            description: 'Portal corporativo para clínica odontológica, transmitindo confiança e autoridade clínica.',
+                            link: 'https://odonto-prime-eta.vercel.app/'
+                        },
+                        {
+                            title: 'NorthBridge Education',
+                            description: 'Site educacional interativo com apresentação de cursos e sistema de captação de alunos.',
+                            link: 'https://noth-bridge-escola-de-ingles.vercel.app/'
+                        },
+                        {
+                            title: 'IronPeak Gym',
+                            description: 'Landing page de alta energia focada em conversão de matrículas para academia.',
+                            link: 'https://iron-peak-academia.vercel.app/'
+                        },
+                        {
+                            title: 'Athena Fitness',
+                            description: 'Website exclusivo para academia feminina, com design voltado para segurança e empoderamento.',
+                            link: 'https://athenafitness.vercel.app/'
+                        },
+                        {
+                            title: 'Nebulosa Geek Café',
+                            description: 'Site temático e imersivo para cafeteria, com cardápio digital e identidade visual forte.',
+                            link: 'https://nebulosa-geek-cafe.vercel.app/'
+                        },
+                        {
+                            title: 'Paws & Love PetShop',
+                            description: 'Plataforma para petshop destacando serviços de banho e tosa com agendamento facilitado.',
+                            link: 'https://paws-love-petshop.vercel.app/'
+                        }
+                    ]
+                },
+                {
+                    name: "Produtos Interativos & Infoprodutos",
+                    items: [
+                        {
+                            title: 'Espanhol em 30 Dias',
+                            description: 'Plataforma de ensino gamificada, transformando conteúdo estático em experiência interativa.',
+                            link: 'https://espanhol-em-at-30-dias.vercel.app/'
+                        },
+                        {
+                            title: 'Cardápio Digital Inteligente',
+                            description: 'Sistema de pedidos via WhatsApp com painel administrativo para restaurantes.',
+                            link: 'https://cardapio-interativo-dun.vercel.app/'
+                        },
+                        {
+                            title: 'Apostila Interativa Corporativa',
+                            description: 'Treinamento digital gamificado para equipes, aumentando a retenção do conteúdo.',
+                            link: 'https://apostila-interativa-forma-o-de-port.vercel.app/'
+                        },
+                        {
+                            title: 'Guia Digital Materno',
+                            description: 'Infoproduto interativo sobre introdução alimentar, com interface amigável para mães.',
+                            link: 'https://apostila-interativa-introdu-o-alime.vercel.app/'
+                        },
+                        {
+                            title: 'Finanças Gamificadas',
+                            description: 'Ferramenta educativa que ensina finanças pessoais através de interatividade.',
+                            link: 'https://financas-pessoais-iniciantes.vercel.app/'
+                        }
+                    ]
+                },
+                {
+                    name: "SaaS & Sistemas Web",
+                    items: [
+                        {
+                            title: 'Gerenciador de Projetos',
+                            description: 'Aplicação web (SaaS) para gestão ágil de tarefas e equipes.',
+                            link: 'https://gerenciador-de-projetos-eta.vercel.app/'
+                        }
+                    ]
+                },
+                {
+                    name: "Games & Aplicações Web",
+                    items: [
+                        {
+                            title: 'Tic Tac Fun',
+                            description: 'Web App interativo demonstrando lógica de programação e interface dinâmica.',
+                            link: 'https://tic-tac-fun-three.vercel.app/'
+                        },
+                        {
+                            title: 'Projeto Atlas',
+                            description: 'Aplicação fitness gamificada para acompanhamento de treinos personalizados.',
+                            link: 'https://projeto-atlas.vercel.app/'
+                        }
+                    ]
+                }
+            ];
+
+            const projectsContainer = document.getElementById('projects-container');
+
+            projectCategories.forEach(category => {
+                const categorySection = `
+                    <div class="mb-16">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                            <span class="w-2 h-8 bg-indigo-500 rounded-sm"></span>
+                            ${category.name}
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            ${category.items.map(project => `
+                                <article class="group bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:bg-slate-800/80 flex flex-col h-full hover:-translate-y-1">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <h4 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">${project.title}</h4>
+                                        <svg class="w-5 h-5 text-slate-500 group-hover:text-indigo-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                    </div>
+                                    <p class="text-slate-400 text-sm mb-8 flex-grow leading-relaxed">${project.description}</p>
+                                    <div class="flex gap-3 mt-auto">
+                                        <button class="preview-btn flex-1 bg-slate-700 hover:bg-indigo-600 text-white text-sm font-semibold py-3 px-4 rounded-lg transition-all duration-300 border border-slate-600 hover:border-indigo-500" data-url="${project.link}" data-title="${project.title}">
+                                            Pré-visualizar
+                                        </button>
+                                        <a href="${project.link}" target="_blank" class="flex-1 text-center bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold py-3 px-4 rounded-lg transition-all duration-300 border border-slate-700">
+                                            Visitar
+                                        </a>
+                                    </div>
+                                </article>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                projectsContainer.innerHTML += categorySection;
+            });
+            
+            // Modal Logic
+            const modal = document.getElementById('previewModal');
+            const closeModalBtn = document.getElementById('closeModal');
+            const previewFrame = document.getElementById('previewFrame');
+            const modalTitle = document.getElementById('modalTitle');
+
+            const openModal = (url, title) => {
+                previewFrame.src = url;
+                modalTitle.textContent = title;
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeModal = () => {
+                modal.classList.add('hidden');
+                setTimeout(() => { previewFrame.src = ''; }, 200);
+                document.body.style.overflow = 'auto';
+            };
+
+            const attachEvents = () => {
+                document.querySelectorAll('.preview-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        openModal(btn.dataset.url, btn.dataset.title);
+                    });
+                });
+            };
+            
+            attachEvents();
+
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal(); });
+        });
+    </script>
+</body>
+</html>
